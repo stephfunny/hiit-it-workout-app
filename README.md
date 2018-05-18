@@ -1,13 +1,8 @@
-# Hacknb
+# Hiit-it!
 
-> Project description
+> Reach all your fiit goals with these hiit-style workouts!
 
 ## Related Projects
-
-  - https://github.com/hacknb/repo
-  - https://github.com/hacknb/repo
-  - https://github.com/hacknb/repo
-  - https://github.com/hacknb/repo
 
 ## Table of Contents
 
@@ -36,4 +31,3 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
-
