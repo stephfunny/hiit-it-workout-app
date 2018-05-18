@@ -1,6 +1,6 @@
 var path = require('path');
 var SRC_DIR = path.join(__dirname, '/client/src');
-var DIST_DIR = path.join(__dirname, 'public');
+var DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
@@ -18,7 +18,7 @@ module.exports = {
 
       [
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
           // {
           //   loader: "style-loader"
@@ -27,7 +27,7 @@ module.exports = {
           //   loader: "css-loader"
           // }
           // 'to-string-loader',
-          'style-loader', 'css-loader'
+          'style-loader', 'css-loader', 'sass-loader'
        ]
       },
       {
