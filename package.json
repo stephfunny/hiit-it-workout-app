@@ -1,7 +1,7 @@
 {
-  "name": "Hackbnb",
+  "name": "Hiit-it",
   "version": "",
-  "description": "bookings-widget-service",
+  "description": "Customizable workout generator with timer",
   "author": "",
   "license": "ISC",
   "engines": {
@@ -10,6 +10,7 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon server/index.js",
+    "start-live": "node live-server.js",
     "react-dev": "webpack -d --watch",
     "seed-database": "node database/seed.js"
   },
@@ -34,15 +35,20 @@
     "express": "^4.16.2",
     "jquery": "^3.3.1",
     "js-beautify": "^1.7.5",
+    "moment": "^2.22.1",
     "mongoose": "^5.0.7",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.1",
+    "npm": "^6.0.1",
     "react-calendar": "^2.13.0",
     "react-dom": "^16.2.0",
     "react-onclickout": "^2.0.8",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-star-rating-component": "^1.3.0",
     "react2": "^15.3.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.2",
     "underscore": "^1.8.3"

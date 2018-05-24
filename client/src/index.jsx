@@ -1,8 +1,13 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
+import React from 'react';
 import App from './components/App.jsx';
+import store from './store/store.js';
 
+import { Provider } from 'react-redux';
 
-let roomId = window.location.href.split('/')[4];
-console.log('href', roomId);
-ReactDOM.render(<App listingId={roomId}/>, document.getElementById('app'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+);

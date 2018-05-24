@@ -1,46 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Timer from './Timer.jsx';
 import { NavLink } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // timeActive: this.props.timeActive,
     };
   }
   render() {
     return (
       <div className='nav-bar'>
-        <div className='hvr-underline-from-left'>
+        <div className='hvr-line'>
           Home
         </div>
-        <div className='hvr-underline-from-left'>
+        <div className='hvr-line'>
           Saved Workouts
         </div>
-        
-        <div className='flip'>
-          
-          <div className='timer-wrapper back'>
-            <Timer />
-          </div>
-          
-          <div className='front'>
-            <img className='logo' src='https://i.imgur.com/2CympHJ.png'>
-            </img>
-          </div>
-          
-        </div>
-        
-        <div className='hvr-underline-from-left'>
-          Reset
-        </div>         
-        <div className='hvr-underline-from-left'>
-          Save
-        </div>      
-      
+
+        <div className='hvr-line'>Reset</div>
+        <div className='hvr-line'>Save</div>
       </div>
-    )
+    );
   }
 }
 
@@ -76,8 +58,3 @@ export default NavBar;
 //     </ul>
 //   </nav>
 // )}
-
-
-
-
-
