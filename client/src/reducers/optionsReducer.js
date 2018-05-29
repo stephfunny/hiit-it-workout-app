@@ -8,6 +8,7 @@ var optionsReducer = (state = {}, {type, optionsTarget, optionsOperation, desire
     var newState = Object.assign({}, state);
     newState[optionsTarget] = desiredNumber ||
     Math.max(0, newState[optionsTarget] + optionsOperation * 1);
+    console.log(newState);
     return newState;
 
   default:

@@ -1,25 +1,27 @@
 import React from 'react';
 
 var OptionsEntry = ({optionsTarget, optionsTotal, handleOptionsClick}) =>(
-  <div>
+  <div className='options-entry'>
 
-    <span>
-      {optionsTotal}
-    </span>
+    <div>
+      <button
+        onClick={() =>
+          handleOptionsClick(optionsTarget, -1)}
+      >-</button>
+      <button
+        onClick={() =>
+          handleOptionsClick(optionsTarget, +1)}
+      >+</button>
+    </div>
 
-    <button
-      onClick={() =>
-        handleOptionsClick(optionsTarget, -1)}
-    >-</button>
-
-    <button
-      onClick={() =>
-        handleOptionsClick(optionsTarget, +1)}
-    >+</button>
-
-    <span>
-      {optionsTarget}
-    </span>
+    <div>
+      <span>
+        {optionsTotal}{' '}
+      </span>
+      <span>
+        {optionsTarget}
+      </span>
+    </div>
 
   </div>
 );

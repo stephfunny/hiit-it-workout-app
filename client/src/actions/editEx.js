@@ -1,10 +1,7 @@
-var editEx = (id, name, desc, reps, repInfo, misc) => ({
-  type: 'Edit_EX',
-  name: name,
-  description: desc,
-  reps: reps,
-  repInfo: repInfo,
-  misc: misc,
+var editEx = (id, boolean) => ({
+  type: 'EDIT_EX',
+  id: id,
+  editing: boolean
 });
 
 export default editEx;

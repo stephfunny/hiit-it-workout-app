@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { NavLink } from 'react-router-dom';
+import Logo from './Logo.jsx';
+import WorkoutName from './WorkoutName.jsx';
+import $ from 'jquery';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -16,11 +19,20 @@ class NavBar extends React.Component {
           Home
         </div>
         <div className='hvr-line'>
-          Saved Workouts
+          Reset
         </div>
+        <div className=''><Logo /></div>
 
-        <div className='hvr-line'>Reset</div>
-        <div className='hvr-line'>Save</div>
+
+        <div className='hvr-line'>Saved</div>
+        <div className='' >
+          <span onClick={() => {
+            $('.save-workout').css('display', 'block');
+          }}
+          >Save
+          </span>
+          <WorkoutName/>
+        </div>
       </div>
     );
   }

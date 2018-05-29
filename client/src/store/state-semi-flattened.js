@@ -71,7 +71,7 @@ state = {
     cycles: 2, // will multiply all exercises & circuits
   },
 
-  phaseStack: [],
+  phases: [],
   currentPhase: null,
   active: false,
 

@@ -2,51 +2,52 @@ const mongoose = require('mongoose');
 const Promise = require('bluebird');
 
 mongoose.Promise = Promise;
-// mongoose.connect('mongodb://localhost/airbnb_bookings');
+mongoose.connect('mongodb://localhost/hiit-it');
 
 
-var BookingSchema = mongoose.Schema({
-  'id': {type: Number, unique: true},
-  'city': String,
-  'has_availability': Boolean,
-  'min_nights': Number,
-  'max_nights': Number,
-  'native_currency': String,
-  'person_capacity': Number,
-  'price': Number,
-  'listing_weekend_price_native': Number,
-  'cleaning_fee_native': Number,
-  'star_rating': Number,
-  'reviews_count': Number,
-  'weekly_price_factor': Number,
-  'listing_price_for_extra_person_native': Number,
-
-  'available_days': Array,
+var WorkoutSchema = mongoose.Schema({
+  _id: String,
+  date: Date,
+  exercises: Array,
+  time: {
+    move: Number,
+    break: Number,
+    warmUp: Number,
+    coolDown: Number,
+  },
+  options: {
+    exercises: Number,
+    circuits: Number, // circuits will split exercises
+    cycles: Number, // will multiply all exercises & circuits
+  },
+  phases: Array,
+  currentPhase: Number,
+  active: Boolean,
 });
 
-const BookingModel = mongoose.model('Booking', BookingSchema);
+const WorkoutModel = mongoose.model('Workout', WorkoutSchema);
 
 var removeAll = function(callback) {
-  BookingModel.remove({}, callback);
+  WorkoutModel.remove({}, callback);
 };
 
 var insertOne = function(data) {
-  return BookingModel.create(data);
+  return WorkoutModel.create(data);
 };
 
 var findAll = function() {
-  return BookingModel.find({});
+  return WorkoutModel.find({});
 };
 
-var findOne = function(roomid) {
+var findOne = function(workoutId) {
   console.log('find one called');
-  return BookingModel.findOne({'id': roomid})
+  return WorkoutModel.findOne({'id': workoutId})
     .exec();
 };
 
 module.exports = {
-  BookingSchema: BookingSchema,
-  BookingModel: BookingModel,
+  WorkoutSchema: WorkoutSchema,
+  WorkoutModel: WorkoutModel,
   removeAll: removeAll,
   insertOne: insertOne,
   findAll: findAll,

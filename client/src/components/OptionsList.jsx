@@ -2,20 +2,18 @@ import React from 'react'; import ReactDOM from 'react-dom';
 import OptionsEntry from './OptionsEntry';
 
 var OptionsList = ({options, handleOptionsClick}) => (
-  !options
-    ? <div>Please wait...</div>
-    : <div>
-      {
-        Object.keys(options).map((target, i, keys) => (
-          <OptionsEntry
-            key={i}
-            optionsTarget={target}
-            optionsTotal={options[target]}
-            handleOptionsClick={handleOptionsClick}
-          />
-        ))
-      }
-    </div>
+  <div className='options-list'>
+    {
+      Object.keys(options).map((target, i, keys) => (
+        <OptionsEntry
+          key={i}
+          optionsTarget={target}
+          optionsTotal={options[target]}
+          handleOptionsClick={handleOptionsClick}
+        />
+      ))
+    }
+  </div>
 );
 
 // OptionsList.propTypes = {
