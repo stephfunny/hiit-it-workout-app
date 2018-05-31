@@ -2,7 +2,7 @@ import Redux from 'redux';
 import newEx from '../data/newEx.js';
 
 var exercisesReducer = (state = [], {type, name, description, reps, editing,
-  repInfo, misc, id, desired, operation, exercises, videoLink}) => {
+  misc, id, desired, operation, exercises, mediaLink}) => {
   console.log('state:', state, type);
   var newState = state.slice(0, state.length);
 
@@ -18,10 +18,9 @@ var exercisesReducer = (state = [], {type, name, description, reps, editing,
       name: name,
       description: description,
       reps: reps,
-      repInfo: repInfo,
       misc: misc,
       editing: false,
-      videoLink: videoLink,
+      mediaLink: mediaLink,
     });
     return newState;
 
@@ -48,28 +47,25 @@ var exercisesReducer = (state = [], {type, name, description, reps, editing,
     //     newState[id][Object.keys({field})[0]] = field;
     //   }
     // };
-    // [name, description, reps, repInfo, misc].forEach(
+    // [name, description, reps, misc].forEach(
     //   x => update(x));
-    // [name, description, reps, repInfo, misc].forEach((field) =>
+    // [name, description, reps, misc].forEach((field) =>
     //   field ? newState[id][field] = field : null);
-    if (name) {
-      newState[id].name = name;
-    }
-    if (description) {
-      newState[id].description = description;
-    }
-    if (reps) {
-      newState[id].reps = reps;
-    }
-    if (repInfo) {
-      newState[id].repInfo = repInfo;
-    }
-    if (misc) {
-      newState[id].misc = misc;
-    }
-    if (videoLink) {
-      newState[id].videoLink = videoLink;
-    }
+    // if (name) {
+    newState[id].name = name;
+    // }
+    // if (description) {
+    newState[id].description = description;
+    // }
+    // if (reps) {
+    newState[id].reps = reps;
+    // }
+    // if (misc) {
+    newState[id].misc = misc;
+    // }
+    // if (mediaLink) {
+    newState[id].mediaLink = mediaLink;
+    // }
     return newState;
 
   default:

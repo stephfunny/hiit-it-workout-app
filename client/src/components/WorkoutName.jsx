@@ -10,6 +10,7 @@ var WorkoutName = ({
         e.preventDefault();
         console.log(e.target.workoutName.value);
         $('.save-workout').css('display', 'none');
+        handleSave(e.target.workoutName.value);
       }}>
         <input name='workoutName' placeholder='Add Name'>
         </input>

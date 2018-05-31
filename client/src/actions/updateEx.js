@@ -1,12 +1,11 @@
-var updateEx = (id, name, desc, reps, repInfo, misc, videoLink) => ({
+var updateEx = (id, name, reps, desc, misc, mediaLink) => ({
   type: 'UPDATE_EX',
   id: id,
   name: name,
   description: desc,
   reps: reps,
-  repInfo: repInfo,
   misc: misc,
-  videoLink: videoLink,
+  mediaLink: mediaLink,
 });
 
 export default updateEx;

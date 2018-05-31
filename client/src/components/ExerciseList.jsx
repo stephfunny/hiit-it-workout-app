@@ -3,8 +3,9 @@ import ExerciseEntry from './ExerciseEntry.jsx';
 import $ from 'jquery';
 import Columns from 'react-columns';
 import newEx from '../data/newEx.js';
+import dragula from 'dragula';
 
-var ExerciseList = ({exercises, options, videoLink,
+var ExerciseList = ({exercises, options, mediaLink, name,
   handleInput, handleAddExercise, handleRemoveExercise, handleEditExercise,
   handleChangeExerciseOrder, handleUpdateExercise}) => {
   if (options.exercises > exercises.length) {
@@ -17,6 +18,7 @@ var ExerciseList = ({exercises, options, videoLink,
       ? (<div>Wait...</div>)
       :
       (<div>
+        {name ? <div>name</div> : null}
         <Columns columns={options.circuits} className='exercise-list'>
           {
             exercises
@@ -28,7 +30,7 @@ var ExerciseList = ({exercises, options, videoLink,
                   reps={exercise.reps}
                   repInfo={exercise.repInfo}
                   misc={exercise.misc}
-                  videoLink={exercise.videoLink}
+                  mediaLink={exercise.mediaLink}
                   editing={exercise.editing}
                   handleAddExercise={handleAddExercise}
                   handleRemoveExercise={handleRemoveExercise}

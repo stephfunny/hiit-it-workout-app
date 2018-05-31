@@ -10,12 +10,13 @@ import updateEx from './../actions/updateEx.js';
 var mapStateToProps = (state) => ({
   exercises: state.exercises,
   options: state.options,
+  name: state.name,
 });
 
 var mapDispatchToProps = (dispatch) => ({
-  handleAddExercise: (name, desc, reps, repInfo, misc) => {
+  handleAddExercise: (name, desc, reps, misc) => {
     // console.log('dispatch add');
-    dispatch(addEx(name, desc, reps, repInfo, misc));
+    dispatch(addEx(name, desc, reps, misc));
   },
   handleRemoveExercise: (id) => {
     dispatch(removeEx(id));
@@ -27,8 +28,8 @@ var mapDispatchToProps = (dispatch) => ({
   handleChangeExerciseOrder: (id, operation, desired) => {
     dispatch(changeExOrder(id, operation, desired));
   },
-  handleUpdateExercise: (id, name, desc, reps, repInfo, misc, videoLink) => {
-    dispatch(updateEx(id, name, desc, reps, repInfo, misc, videoLink));
+  handleUpdateExercise: (id, name, desc, reps, misc, mediaLink) => {
+    dispatch(updateEx(id, name, desc, reps, misc, mediaLink));
     dispatch(editEx(id, false));
   },
   changeExList: (arr) => {

@@ -1,9 +1,11 @@
 import Redux from 'redux';
 
-var workoutNameReducer = (state = '', {type, workoutName}) => {
+var workoutNameReducer = (state = '', {type, name}) => {
 
   switch (type) {
-
+  case 'SAVE_WORKOUT':
+    return name;
+    
   case 'ADD_WORKOUT_NAME':
     // var newState = state;
     return workoutName;

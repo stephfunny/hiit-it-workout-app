@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { NavLink } from 'react-router-dom';
 import Logo from './Logo.jsx';
-import WorkoutName from './WorkoutName.jsx';
+import WorkoutNameContainer from '../containers/WorkoutName.js';
 import $ from 'jquery';
 
 class NavBar extends React.Component {
@@ -31,7 +31,8 @@ class NavBar extends React.Component {
           }}
           >Save
           </span>
-          <WorkoutName/>
+          <WorkoutNameContainer
+          />
         </div>
       </div>
     );
